@@ -3,16 +3,20 @@ kind: Deployment
 metadata:
   name: playground
   namespace: dev
+
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: playground
-    template:
-      metadata:
-        labels:
-          app: playground
-      spec:
+
+  template:
+    metadata:
+      labels:
+        app: playground
+
+    spec:
       containers:
         - name: playground
           image: wil42/playground:v1
